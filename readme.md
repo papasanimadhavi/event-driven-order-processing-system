@@ -2,8 +2,6 @@
 
 ## Overview
 
-Overview
-
 This repository demonstrates an Event-Driven Order Processing System built using Java, Spring Boot, Apache Kafka, and Microservices.
 
 The application simulates a real-world order processing workflow using asynchronous event-driven communication between distributed microservices. It showcases how Apache Kafka can be used to coordinate business events, improve scalability, and decouple services in a microservices architecture.
