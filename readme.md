@@ -1,19 +1,56 @@
-# Microservices with Spring Boot and Kafka Demo Project [![Twitter](https://img.shields.io/twitter/follow/piotr_minkowski.svg?style=social&logo=twitter&label=Follow%20Me)](https://twitter.com/piotr_minkowski)
+# Event Driven Order Processing System
 
-[![CircleCI](https://circleci.com/gh/piomin/sample-spring-kafka-microservices.svg?style=svg)](https://circleci.com/gh/piomin/sample-spring-kafka-microservices)
+## Overview
 
-[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/dashboard?id=piomin_sample-spring-kafka-microservices)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=piomin_sample-spring-kafka-microservices&metric=bugs)](https://sonarcloud.io/dashboard?id=piomin_sample-spring-kafka-microservices)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=piomin_sample-spring-kafka-microservices&metric=coverage)](https://sonarcloud.io/dashboard?id=piomin_sample-spring-kafka-microservices)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=piomin_sample-spring-kafka-microservices&metric=ncloc)](https://sonarcloud.io/dashboard?id=piomin_sample-spring-kafka-microservices)
+Overview
 
-## Articles
-This repository is used as the example for the following articles:
-1. [Distributed Transactions in Microservices with Kafka Streams and Spring Boot](https://piotrminkowski.com/2022/01/24/distributed-transactions-in-microservices-with-kafka-streams-and-spring-boot/) - how to implement distributed transaction based on the SAGA pattern with Spring Boot and Kafka Streams
-2. [Deep Dive into Saga Transactions with Kafka Streams and Spring Boot](https://piotrminkowski.com/2022/02/07/deep-dive-into-saga-transactions-with-kafka-streams-and-spring-boot/) - how to implement distributed transaction based on the SAGA pattern with Spring Boot and fully Kafka Streams `KStream` and `KTable`. You need to switch to the [streams-full](https://github.com/piomin/sample-spring-kafka-microservices/tree/streams-full) branch.
+This repository demonstrates an Event-Driven Order Processing System built using Java, Spring Boot, Apache Kafka, and Microservices.
+
+The application simulates a real-world order processing workflow using asynchronous event-driven communication between distributed microservices. It showcases how Apache Kafka can be used to coordinate business events, improve scalability, and decouple services in a microservices architecture.
+
+As part of my backend engineering learning, I am exploring, customizing, and enhancing this project to gain practical experience with event-driven architecture, distributed transactions, and modern microservices development.
+
+## Technologies Used
+
+-   Java
+-   Spring Boot
+-   Apache Kafka
+-   Spring Kafka
+-   Microservices
+-   REST APIs
+-   Maven
+-   Docker
+-   Git
+
+## Project Modules
+
+-   Order Service
+-   Payment Service
+-   Stock Service
+-   Base Domain Module
+
+## Learning Objectives
+
+-   Understand Event Driven Architecture
+-   Learn Kafka Producer & Consumer
+-   Understand Saga Pattern
+-   Explore Asynchronous Communication
+-   Learn Distributed Transactions
+-   Improve Microservices Design
+
+## Project Highlights
+
+* Event-Driven Microservices Architecture
+* Apache Kafka Producer and Consumer Communication
+* Saga Pattern for Distributed Transactions
+* RESTful APIs using Spring Boot
+* Asynchronous Order Processing
+* Docker-based Local Deployment
+* Modular Maven Project Structure
+
 
 ## Description
-There are three microservices: \
+The application consists of the following microservices: \
 `order-service` - it sends `Order` events to the Kafka topic and orchestrates the process of a distributed transaction \
 `payment-service` - it performs local transaction on the customer account basing on the `Order` price \
 `stock-service` - it performs local transaction on the store basing on number of products in the `Order`
@@ -181,3 +218,13 @@ $ docker-compose up
 ```
 
 You will have Kafka, order-service, payment-service, and stock-service running in Docker containers.
+
+
+## Future Enhancements
+
+* Add Notification Service for Email/SMS events
+* Integrate Swagger/OpenAPI documentation
+* Add Global Exception Handling
+* Improve Logging and Monitoring
+* Add Unit and Integration Tests
+* Deploy using Docker Compose and Kubernetes
