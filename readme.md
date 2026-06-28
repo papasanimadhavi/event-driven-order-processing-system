@@ -27,14 +27,48 @@ As part of my backend engineering learning, I am exploring, customizing, and enh
 -   Stock Service
 -   Base Domain Module
 
-## Learning Objectives
+## Architecture Overview
 
--   Understand Event Driven Architecture
--   Learn Kafka Producer & Consumer
--   Understand Saga Pattern
--   Explore Asynchronous Communication
--   Learn Distributed Transactions
--   Improve Microservices Design
+The system follows an event-driven microservices architecture.
+
+Order Service:
+- Creates orders
+- Publishes order events to Kafka
+- Maintains order status
+
+Payment Service:
+- Validates customer payment availability
+- Reserves payment amount
+- Sends payment status events
+
+Stock Service:
+- Checks product availability
+- Reserves inventory
+- Sends stock status events
+
+
+## Event Flow
+
+1. Client creates an order through Order Service REST API
+
+2. Order Service publishes Order event to Kafka topic
+
+3. Payment and Stock services consume the event
+
+4. Each service performs its own transaction
+
+5. Services publish response events
+
+6. Order Service aggregates responses and updates final order status
+
+
+## Design Patterns Used
+
+- Event Driven Architecture
+- Saga Pattern
+- Microservices Architecture
+- Producer Consumer Pattern
+- Repository Pattern
 
 ## Project Highlights
 
