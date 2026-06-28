@@ -19,6 +19,13 @@ As part of my backend engineering learning, I am exploring, customizing, and enh
 -   Maven
 -   Docker
 -   Git
+-   Kafka Streams
+-   Hibernate
+-   JPA
+-   PostgreSQL/MySQL
+-   JUnit
+-   Mockito
+-   Distributed Systems
 
 ## Project Modules
 
