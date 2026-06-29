@@ -1,10 +1,20 @@
 package pl.piomin.base.domain;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+
 public class Order {
     private Long id;
+    @NotNull(message = "Customer ID is required")
     private Long customerId;
+
+    @NotNull(message = "Product ID is required")
     private Long productId;
+
+    @Min(value = 1, message = "Product count must be greater than 0")
     private int productCount;
+
+    @Min(value = 1, message = "Price must be greater than 0")
     private int price;
     private String status;
     private String source;

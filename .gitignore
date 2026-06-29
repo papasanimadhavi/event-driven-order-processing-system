@@ -3,3 +3,7 @@
 /order-service/target/
 /payment-service/target/
 /stock-service/target/
+
+.idea/
+*.iml
+target/
