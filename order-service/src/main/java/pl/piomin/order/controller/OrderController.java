@@ -1,5 +1,6 @@
 package pl.piomin.order.controller;
 
+import jakarta.validation.Valid;
 import org.apache.kafka.streams.StoreQueryParameters;
 import org.apache.kafka.streams.state.KeyValueIterator;
 import org.apache.kafka.streams.state.QueryableStoreTypes;
@@ -35,7 +36,7 @@ public class OrderController {
     }
 
     @PostMapping
-    public Order create(@RequestBody Order order) {
+    public Order create(@Valid @RequestBody Order order) {
         order.setId(id.incrementAndGet());
         template.send("orders", order.getId(), order);
         LOG.info("Sent: {}", order);
